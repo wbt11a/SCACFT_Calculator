@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
     <title>South Carolina National Guard ACFT Calculator</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
@@ -15,6 +16,8 @@
     	function isBlank(str) {
             return (!str || /^\s*$/.test(str));
         }
+
+       
 
         function calcDeadLift(myVal)
         {
@@ -149,11 +152,168 @@
         	}
         }
 
+        function convertToSeconds(myVal)
+        {
+        	//split based on colon
+        	//convert to seconds for usage
+        	var splitVal = myVal.split(":");
+        	return (Number(splitVal[0])*60) + Number(splitVal[1]);
+        	
+
+        }
+
+        function calcSDC(myVal)
+        {
+
+        	var myConvertedVal = convertToSeconds(myVal);
+        	
+        	if(myConvertedVal >= convertToSeconds("4:35")) //hardcode these once ACFT is finalized
+	        	return 0;
+
+	        if(myConvertedVal <= convertToSeconds("1:40"))
+	        	return 100;
+
+	        if(myConvertedVal >= convertToSeconds("3:35"))
+	        	return (myConvertedVal - convertToSeconds("3:35"));
+
+	        if(myConvertedVal >= convertToSeconds("2:45"))
+	        	return Math.floor((65 - ((myConvertedVal - convertToSeconds("2:45"))/10))); //round down.
+
+	        if(myConvertedVal >= convertToSeconds("2:09"))
+	        	return Math.floor((70-(myConvertedVal - convertToSeconds("2:09"))/7));
+
+	        //currently no way to get 99 points
+	        if(myConvertedVal >= convertToSeconds("1:41"))
+	        	return 98 - (myConvertedVal - convertToSeconds("1:41"));
+
+        }
+
+        function calcLegTuck(myVal)
+        {
+        	if(myVal <= 0) return 0;
+        	if(myVal >= 20) return 100;
+
+        	var map = { '1':60, '2': 63, '3':65, '4':67, '5':70, '6':72, '7':74, '8':76, '9':78, '10':80, '11':82, '12':84, '13':86, '14':88, '15':90, '16':92, '17':94, '18':96, '19':98, '20':100}
+
+        	return map[myVal.toString()];
+        }
+
+        function calcTwoMile(myVal)
+        {
+        	var myConvertedVal = convertToSeconds(myVal);
+        	
+        	if(myConvertedVal <= convertToSeconds("12:45"))
+        		return 100;
+        	if(myConvertedVal >= convertToSeconds("23:07"))
+        		return 0;
+
+        	if(myConvertedVal >= convertToSeconds("21:07"))
+        		return Math.floor(60-(myConvertedVal - convertToSeconds("21:07"))/2);
+
+
+        	if(myConvertedVal > convertToSeconds("20:45"))  //random arbitrary value in chart
+        		return 60;
+        	if(myConvertedVal == convertToSeconds("20:45"))
+        		return 61;
+
+
+        	if(myConvertedVal >= convertToSeconds("20:10"))
+        		return Math.floor(64 - (myConvertedVal - convertToSeconds("20:10")) / 10);
+
+        	if(myConvertedVal > convertToSeconds("19:00"))
+        		return 64;
+        	if(myConvertedVal == convertToSeconds("19:00"))
+        		return 65;
+
+        	if(myConvertedVal > convertToSeconds("18:50"))
+        		return 65;
+        	if(myConvertedVal == convertToSeconds("18:50"))
+        		return 66;
+        	if(myConvertedVal > convertToSeconds("18:35"))
+        		return 66;
+        	if(myConvertedVal == convertToSeconds("18:35"))
+        		return 67;
+
+        	if(myConvertedVal >= convertToSeconds("18:00"))
+        		return Math.floor(70 - (myConvertedVal - convertToSeconds("18:00"))/10);
+
+        	if(myConvertedVal >= convertToSeconds("13:30"))
+        		return Math.floor(97 - (myConvertedVal - convertToSeconds("13:30"))/10);
+
+        	if(myConvertedVal > convertToSeconds("13:15"))
+        		return 97;
+        	if(myConvertedVal == convertToSeconds("13:15"))
+        		return 98;
+
+        	if(myConvertedVal > convertToSeconds("13:00"))
+        		return 98;
+        	if(myConvertedVal == convertToSeconds("13:00"))
+        		return 99;
+
+        	if(myConvertedVal > convertToSeconds("12:45"))
+        		return 99;
+
+        }
+
+
+
+        function writeScore(score, pos, pass){
+        
+
+        		if(!pass){
+        			$("#finalResult").html("Fail");
+        			$("#finalResult").addClass("failColor");
+        		}
+
+        		if(pos == 0){
+        			$("#deadLiftCalced").html(score[0] + "/100");
+        			addFailFont("deadLiftCalced", pass);
+        		}
+        		if(pos == 1){
+    				$("#powerThrowCalced").html(score[1] + "/100");
+    				addFailFont("powerThrowCalced", pass);
+        		}
+    			if(pos == 2){
+    				$("#pushUpsCalced").html(score[2]+ "/100");
+    				addFailFont("pushUpsCalced", pass);
+    			}
+    			if(pos == 3){
+    				$("#sprintDragCarryCalced").html(score[3]+ "/100");
+    				addFailFont("sprintDragCarryCalced", pass);
+    			}
+    			if(pos == 4){
+    				$("#legTuckCalced").html(score[4]+"/100");
+    				addFailFont("legTuckCalced", pass);
+    			}
+    			
+    			if(pos == 5){
+    				$("#twoMileRunCalced").html(score[5]+ "/100");
+    				addFailFont("twoMileRunCalced", pass);
+    			}
+    			
+        }
+
+        function addFailFont(myId, pass)
+        {
+        	if(!pass)
+        		$("#"+myId).addClass("failColor");
+
+        }
 
 
 
     	$(document).ready(function() {
     		$("#errorBlock").hide();
+
+
+
+    		$("#clear").click(function(e){
+
+    			$("input").map(function(){
+    				$(this).val("");
+
+    			});
+    		});
 
 
     		//on submit
@@ -205,14 +365,69 @@
     			if(invalidError + emptyError != 0)
     				return;
 
-    			var deadLift = calcDeadLift($("#deadliftWgt").val());
-    			var powerThrow = calcPowerThrow($("#powerThrowDis").val());
-    			var pushups = calcPushUps($("#releasePushup").val());
-    			var sdc = $("#sprintDragCarry").val();
-    			var legTuck = $("#legTuck").val();
-    			var twoMile = $("#twoMileRun").val();
+    			var pass = true;
+    			$("#finalResult").html("Pass");
+    			
+    			var soldierCat = $("#soldierCat").val();
+    			if(soldierCat == 1)
+    				$("#finalSoldierCat").html("Category: Moderate Physical Demand (60%)");
+    			if(soldierCat == 2)
+    				$("#finalSoldierCat").html("Category: Significant Physical Demand (65%)");
+    			if(soldierCat == 3)
+    				$("#finalSoldierCat").html("Category: Heavy Physical Demand (70%)");
+    			
+    			var score = [];
 
-    			//alert(calcPushUps($("#releasePushup").val()));
+    			score[0]=calcDeadLift($("#deadliftWgt").val());
+    			score[1]=calcPowerThrow($("#powerThrowDis").val())
+    			score[2]=calcPushUps($("#releasePushup").val());
+    			score[3]=calcSDC($("#sprintDragCarry").val());
+    			score[4]=calcLegTuck($("#legTuck").val());
+    			score[5]=calcTwoMile($("#twoMileRun").val());
+
+
+    			var total = 0;
+
+    			for(var i = 0; i < score.length; i++)
+    			{
+
+    				total = total + score[i];
+    				if(soldierCat == 1 )
+    				{
+    					if(score[i]< 60)
+    						writeScore(score, i, false);
+    					else
+    						writeScore(score,i,true);
+    					
+    				}
+
+    				if(soldierCat == 2)
+    				{
+    					if(score[i] < 65)
+    						writeScore(score, i, false);
+    					else
+    						writeScore(score,i,true);
+    				}
+    				
+
+    				if(soldierCat == 3)
+    				{
+    					if(score[i] < 70)
+    						writeScore(score, i, false);
+    					else
+    						writeScore(score,i,true);
+    				}
+    				
+
+    			}
+
+    			$("#totalScore").html(total + "/600");
+    		
+
+    			
+
+    			$('#myModal').modal('show'); 
+    			//alert(soldierCat);
 
 
     		}); //end onclick
@@ -232,7 +447,7 @@
         .top-buffer { margin-top:20px; }
   	 	.errorText { color: red; }
   	 	.errorBorder {border-color: red;}
-
+  	 	.failColor {color: #FF0000;}
 
     </style>
 </head>
@@ -240,35 +455,23 @@
 	<div class="jumbotron jumbotron-fluid">
 	<div class="row">
 		<div class="d-flex justify-content-between">
-			<div class="col-md-8">
-				<img  alt="SC National Guard" src="logo.png" />
+			<div class="col-md-4">
+				<img  alt="SC National Guard" src="https://www.scguard.com/wp-content/themes/scng-new/assets/media/logo.png" />
 			</div>
 			<div class="col-md-4">
 				<h1>
 					ACFT Calculator
 				</h1>
 			</div>
+
 		</div>
 	</div>
 	</div>
 	<div class="row">
 		<div class="col-md-4">
-			<h1>Instructions</h1>
-			<ul id="exercises">
-  <li><b>Deadlift:</b> Weight must be between 120 and 420 pounds. Three reps must be performed in five minutes.</li>
-  <li><b>Power Throw:</b> A 10-pound medicine ball will be thrown overhead and backward. There is a three minutes restriction to make one practice throw and two for a grade. The longest distance is recorded.</li>
-  <li><b>Release Push-Ups:</b> The Soldier must lower his/her chest to the floor and lift his/her hands off the ground between each rep. Soldiers are given three minutes to do as many reps as they can.</li>
-  <li><b>Sprint Drag Carry:</b>  In four minutes, the Soldier will go 25 meters out and 25 meters back five times. Each iteration will include a different activity: sprint, drag a sled, run a lateral shuffle, carry two 40-pound kettle bells, then sprint again.</li>
-  <li><b>Leg Tuck:</b> The Soldier will be required to hang from a pull-up bar and with his/her body parallel, then pull their knees to their elbows for as many reps as possible in two minutes.</li>
-  <li><b>Two Mile Run:</b> Two-mile run on a track or a paved, level road, with a 21-minute maximum</li>
-</ul>
-		</div>
-		
-		
-			<div class="col-md-8">
 				<h1>Soldier Data</h1>
 				<div class="row">
-					<div class="col-sm-2">
+					<div class="col-sm-6">
 					<!--<div class="form-group">-->
 						 <label left id="deadliftWgtLbl" for="deadliftWgt">Deadlift Weight</label>
 						 <input  placeholder="0" class="form-control " id="deadliftWgt" name="deadliftWgt"/>
@@ -283,7 +486,7 @@
 
 
 
-					<div class="col-sm-2">
+					<div class="col-sm-6">
 						 <label left id="sprintDragCarryLbl" for="sprintDragCarry">Sprint Drag Carry</label>
 						 <input  placeholder="0:00" class="form-control " id="sprintDragCarry" name="sprintDragCarry"/>
 						 
@@ -295,7 +498,7 @@
 				</div>
 
 				<div class="row">
-					<div class="col-sm-4">
+					<div class="col-sm-12">
 						<label id="soldierCatLbl" for="soldierCat">Soldier Category</label> 
 						<select id="soldierCat" name="soldierCat" class="form-control">
 							<option value="1">Moderate Physical Demand (60%)</option>
@@ -309,6 +512,7 @@
 					<div class="col-sm-4">
 						
 						<button id="submit" type="submit" class="btn btn-primary">Calculate</button>
+						<button id="clear" class="float-right btn btn-warning">Clear</button>
 					</div>
 				</div>
 				<div class="row" >
@@ -316,6 +520,116 @@
 						
 					</div>
 				</div>
+		</div>
+		<div class="col-md-4 text-left">
+			<h1>Instructions</h1>
+			<ul id="exercises">
+  <li><b>Deadlift:</b> Weight must be between 120 and 420 pounds. Three reps must be performed in five minutes.</li>
+  <li><b>Power Throw:</b> A 10-pound medicine ball will be thrown overhead and backward. There is a three minutes restriction to make one practice throw and two for a grade. The longest distance is recorded.</li>
+  <li><b>Release Push-Ups:</b> The Soldier must lower his/her chest to the floor and lift his/her hands off the ground between each rep. Soldiers are given three minutes to do as many reps as they can.</li>
+  <li><b>Sprint Drag Carry:</b>  In four minutes, the Soldier will go 25 meters out and 25 meters back five times. Each iteration will include a different activity: sprint, drag a sled, run a lateral shuffle, carry two 40-pound kettle bells, then sprint again.</li>
+  <li><b>Leg Tuck:</b> The Soldier will be required to hang from a pull-up bar and with his/her body parallel, then pull their knees to their elbows for as many reps as possible in two minutes.</li>
+  <li><b>Two Mile Run:</b> Two-mile run on a track or a paved, level road, with a 21-minute maximum</li>
+</ul>
+		</div>
+		
+		
+			
+
+
+				<!-- The Modal -->
+				  <div class="modal" id="myModal">
+				    <div class="modal-dialog modal-dialog-centered modal-lg">
+				      <div class="modal-content">
+				      
+				        <!-- Modal Header -->
+				        <div class="modal-header">
+				          <h4 id="finalSoldierCat" class="modal-title"></h4>
+				          <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+				        </div>
+				        
+				        <!-- Modal body -->
+				        <div class="modal-body">
+				       		<div class="container col-md-12">
+				       			<div class="row">
+					          		<div class="col-md-6">
+					          			<h2 >Deadlift: </h2> 
+					          		</div>
+					          		<div class="col-md-4">
+					          			<h3 id="deadLiftCalced"></h3>
+					          		</div>
+				          		</div>
+				          		<div class="row">
+				          			<div class="col-md-6">
+				          				<h2>Power Throw: </h2>
+				          			</div>
+				          			<div class="col-md-4">
+				          				<h3 id="powerThrowCalced"></h3>
+				          			</div>
+				          		</div>
+				          		<div class="row">
+				          			<div class="col-md-6">
+				          				<h2>Release Pushups: </h2>
+				          			</div>
+				          			<div class="col-md-4">
+				          				<h3 id="pushUpsCalced"></h3>
+				          			</div>
+				          		</div>
+				          		<div class="row">
+				          			<div class="col-md-6">
+				          				<h2>Sprint Drag Carry: </h2>
+				          			</div>
+				          			<div class="col-md-4">
+				          				<h3 id="sprintDragCarryCalced"></h3>
+				          			</div>
+				          		</div>
+				          		<div class="row">
+				          			<div class="col-md-6">
+				          				<h2>Leg Tuck: </h2>
+				          			</div>
+				          			<div class="col-md-4">
+				          				<h3 id="legTuckCalced"></h3>
+				          			</div>
+				          		</div>
+				          		<div class="row">
+				          			<div class="col-md-6">
+				          				<h2>Two Mile Run: </h2>
+				          			</div>
+				          			<div class="col-md-4">
+				          				<h3 id="twoMileRunCalced"></h3>
+				          			</div>
+				          		</div>
+				          		<div class="row">
+				          			<div class="col-md-6">
+				          				<h2>Total: </h2>
+				          			</div>
+				          			<div class="col-md-4">
+				          				<h3 id="totalScore"></h3>
+				          			</div>
+				          		</div>
+				     		  </div>
+				     	</div>
+				        
+				        <!-- Modal footer -->
+				        <div class="modal-footer">
+				        	<div class="container col-md-12">
+				        		<div class="row">
+				        			<div class="col-md-4">
+				         				 <h4>ACFT Result:  </h4>
+				         			</div>
+				         			<div class="col-md-4">
+				         				<h4 id="finalResult">Pass</h4>
+				         			</div>
+				         			<div class="col-md-4">
+				         				 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+				         			</div>
+				         		</div>
+				         	</div>
+				        </div>
+				        
+				      </div>
+				    </div>
+				  </div>
 					
 					
 
