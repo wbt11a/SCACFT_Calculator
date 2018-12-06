@@ -304,15 +304,23 @@
 
     	$(document).ready(function() {
 
-    		$("#soldierCat").change(function(e){
+            //does not work in firefox or edge
+    		/*$("#soldierCat").change(function(e){
 
     			var backgroundColor = $("option:selected", this).css("background-color");
     			var color = $("option:selected", this).css("color");
     			$(this).css("background-color",backgroundColor);
     			$(this).css("color",color)
 
-    		}).change();
+    		}).change();*/
 
+
+            $('#soldierCat').change(function (){
+              var color = $(this).find('option:selected').val();
+
+             $(this).removeClass('option1 option2 option3').addClass('option' + $(this).find('option:selected').val());
+             $("#submit").focus();
+            }).change();
 
     		$("#errorBlock").hide();
 
@@ -460,23 +468,45 @@
   	 	.errorBorder {border-color: red;}
   	 	.failColor {color: #FF0000;}
 
-  	 	select option.option1
+  	 	/*select option.option1
   	 	{
-  	 		background-color: gold;
+  	 		background-color: gold !important;
   	 	}
 
   	 	select option.option2
   	 	{
-  	 		background-color: #D0D0D0;
+  	 		background-color: #D0D0D0 !important;
   	 	}
 
   	 	select option.option3
   	 	{
-  	 		background-color: black;
-  	 		color: white;
-  	 	}
+  	 		background-color: black !important;
+  	 		color: white !important;
+  	 	}*/
 
+         select option,
+        select {
+            background-color:white;
+        }
 
+         select option[value="1"],
+            select.option1
+            {
+                background-color:gold;
+            }
+
+        select option[value="2"],
+            select.option2
+            {
+                background-color:#D0D0D0;
+            }
+
+        select option[value="3"],
+            select.option3
+            {
+                background-color:black;
+                color: white;
+            }
 
     </style>
 </head>
