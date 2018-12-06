@@ -303,6 +303,17 @@
 
 
     	$(document).ready(function() {
+
+    		$("#soldierCat").change(function(e){
+
+    			var backgroundColor = $("option:selected", this).css("background-color");
+    			var color = $("option:selected", this).css("color");
+    			$(this).css("background-color",backgroundColor);
+    			$(this).css("color",color)
+
+    		}).change();
+
+
     		$("#errorBlock").hide();
 
 
@@ -449,6 +460,24 @@
   	 	.errorBorder {border-color: red;}
   	 	.failColor {color: #FF0000;}
 
+  	 	select option.option1
+  	 	{
+  	 		background-color: gold;
+  	 	}
+
+  	 	select option.option2
+  	 	{
+  	 		background-color: #D0D0D0;
+  	 	}
+
+  	 	select option.option3
+  	 	{
+  	 		background-color: black;
+  	 		color: white;
+  	 	}
+
+
+
     </style>
 </head>
 <body>
@@ -500,10 +529,10 @@
 				<div class="row">
 					<div class="col-sm-12">
 						<label id="soldierCatLbl" for="soldierCat">Soldier Category</label> 
-						<select id="soldierCat" name="soldierCat" class="form-control">
-							<option value="1">Moderate Physical Demand (60%)</option>
-							<option value="2">Significant Physical Demand (65%)</option>
-							<option value="3">Heavy Physical Demand (70%)</option>
+						<select id="soldierCat" name="soldierCat" class="form-control option1">
+							<option class="option1" value="1">Moderate Physical Demand (60%)</option>
+							<option class="option2" value="2">Significant Physical Demand (65%)</option>
+							<option class="option3" value="3">Heavy Physical Demand (70%)</option>
 						</select>
 
 					</div> 
