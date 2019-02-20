@@ -2,22 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>South Carolina National Guard ACFT Calculator</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
     <script type="text/javascript">
-    	
 
 
-    	
-    	function isBlank(str) {
+
+
+        function isBlank(str) {
             return (!str || /^\s*$/.test(str));
         }
 
-        function showGuidance(event){
+        function showGuidance(event) {
 
 
             $("#explItem").find('p').remove();
@@ -25,44 +25,38 @@
             $("#explItem").find('li').remove();
             $("#explItem").find('b').remove();
             $("#explItem").find("iframe").remove();
-            if(event == "deadlift")
-            {
-                
+            if (event == "deadlift") {
+
                 $("#explImage").attr("src", "deadlift.png");
 
                 $('<p><b>3 Repetition Maximum Deadlift (MDL)</b> is a muscular strength test that represents movements required to safely and effectively lift heavy loads from the ground, jump, bound and tolerate landing. The MDL is a strong predictor of a Soldier’s ability to lift and carry a casualty on a litter, and to lift and move personnel and equipment. This test event requires well-conditioned back and leg muscles that assist Soldiers in load carriage and in avoiding injuries to the upper and lower back caused by moving long distances under load and lifting heavy objects.</p><ul><li>The MDL consists of three phases: preparatory, upward movement, and downwardmovement.</li><ul><li>Preparatory Phase: the Soldier will step inside the hexagon/trap bar, feet generally shoulderwidth apart, and locate the midpoint of the hexagon/trap bar handles.On the command of “GETSET,” the Soldier will bend at the knees and hips, reach down and grasp the center of thehandles (“D-handle” hexagon/traps bars are not authorized; as an exception, if a dual-handled hexagon/trap bar is used, the Soldier will grasp the lower handles, with the Dhandles facing down). Arms should be fully extended, back flat, head in line with the spinalcolumn or slightly extended, head and eyes to the front or slightly upward, and heels incontact with the ground. All repetitions will begin from this position.</li><li>UpwardMovement Phase: on the command of “GO,” the Soldier will stand up and lift the barby extending the hips and knees. Hips should never rise before or above the shoulders. Theback should remain straight – not flexed or extended. The Soldier will continue to extendthe hips and knees until reaching an upright stance. There is a slight pause at the top of thismovement.</li><li>Downward Movement Phase: by flexing the hips and the knees slowly, the Soldier lowers thebar to the ground under control while maintaining a flat-back position. Do not drop or let goof the bar. The hexagon/trap bar weight plates must touch the ground before beginning thenext repetition. Weight plates may not bounce on the ground.</li></ul><li>Execute three continuous repetitions with the same weight. If the Soldier fails to complete threecontinuous repetitions under control, he or she is permitted one retest at a lower weight after a rest ofup to two minutes. If the Soldier successfully completes three continuous repetitions on the firstattempt, he or she may elect an additional attempt at a higher weight after a rest of up to two minutes.The maximum number of attempts on the MDL istwo.</li><li>The heaviest weight successfully lifted three times is the raw scorerecorded.</li><li>Graders will stop the attempt if they determine a Soldier will injure themselves by continuing. If thegrader stops a Soldier to prevent injury, this is not considered a record attempt. A test attempt is notstopped for minor errors in form that are not deemed a threat of injury. Common causes of injuryinclude:</li><ul><li>Hips moving above the shoulders.</li><li>Excessive rounding of the shoulders.</li><li>Knees collapsing inwards.</li><li>Dropping the weights.</li></ul><li>Graders will terminate a record attempt (which counts as one of two record attempts) if the Soldier:</li><ul><li>Drops or bounces the weights off the ground.</li><li>Rests in the down position. Resting means no continuous effort is being made to lift the weight.</li></ul></ul><iframe width="100%" height="315" src="https://www.youtube.com/embed/Eef09p0NIrM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>').appendTo("#explItem");
-                
 
-                
+
+
 
             }
 
-            if(event == "powerthrow")
-            {
+            if (event == "powerthrow") {
                 $("#explImage").attr("src", "powerthrow.PNG");
                 $('<p><b>Standing Power Throw (SPT)</b> measures upper and lower body explosive power, flexibility, and dynamic balance. Explosive power contributes to tasks requiring quick explosive movements to maneuver equipment and personnel. These tasks include executing a buddy drag to pull an injured person to a safe location, throwing equipment onto or over an obstacle, throwing a hand grenade, assisting a buddy to climb up a wall, lifting and loading equipment, and employing progressive levels of force in man-to-man contact.</p><ul><li>Graders in adjacent lanes (for example lanes 1 and 2) will work together to administer the SPT totheir groups of two to four Soldiers. One grader moves onto the testing lane (lane grader) with thewooden/PVC marking stick, in preparation for marking the landing point of the throw and measuringthe distance. The lane grader pre-positions a Soldier from each group in the SPT lane to retrieve themedicine balls. The other grader manages the throws. As a safety precaution and to ensure accuratemeasures of throwing distance, only one Soldier from the two lanes throws at a time. Soldiers onlyexecute throws when directed by their grader.</li><li>The grader will call the first two Soldiers (one from group/lane 1 and one from group/lane 2) to thestart line; one Soldier in lane 1 and one Soldier in lane 2. The Soldiers will face away from the startline, grasp the medicine ball (10lb) with both hands at hip level and stand with both heels at (but noton or over) the start line. Grasp the ball firmly and as far around the sides of the ball as possible.Towels or rags will be provided to remove excess moisture/debris from the medicineball.</li><li>Start line grader ensures the lane is clear and the lane grader is prepared to score the throw.</li><li>Throw 1 is a practice throw to allow Soldiers to warm-up and the lane grader to move to an approximatelanding point. Throw 1 is not measuredor recorded.</li><li>As directed by the grader, the Soldier in lane 1 executes Throw 1 (practice throw). Soldiers arepermitted several preparatory movements flexing at the trunk, knees, and hips while lowering theballbetween their legs. When directed by the grader, the Soldier in lane 2 executes Throw 1 (practice throw).</li><li>Soldiers in lanes 1 and 2 alternately execute Throws 2 and 3 (the two record throws). Soldiers are stillpermitted the preparatorymovements. Once the Soldiers complete 3 throws, they will move onto the SPTlane to retrievemedicine balls and replace their fellow Soldiers who return to the back of the line.</li><li>The start line grader will give the command “GO” and observe the Soldier’s feet to make sure theydo not step on or over the start line. The lane grader marks the center of the landing point (the ballmay land outside of the designated lane), transfers this point to the tape measure, and calls out thedistance to the nearest tenth of a meter. The measurement is taken from the center of the landingpoint perpendicular to the tape measure. The lane grader calls out the distance (for example, “eightpoint five”) and the start line grader records the distance on the Soldier’s scorecard.</li><li>The Soldier must remain behind the start line throughout the test event. If a Soldier steps on or overthe start line during the test event, that throw will be a FAULT and the throw will be repeated. TwoFAULTS in a row will count as one record attempt and the Soldier will receive a raw score of 0.0meters for that attempt.</li><li>The Soldier must make one practice throw and two record throws, and the start line grader mustrecord both record throws. Although both record throws are recorded, only the longer ofthe tworecord throws will count as the raw score. The start line grader will circle the longer attempt.</li><li>To prevent injuries the grader should ensurethe:</li><ul><li>Medicine ball is free of debris and dry before each attempt.</li><li>Lane grader and ball retriever are ready to receive the throw.</li><li>Start line grader is ready when the ball retriever rolls the ball back to the start line.</li></ul><li>Grading Tips:</li><ul><li>A record attempt will not count if a Soldier steps on or over the start line during a throw. This isa fault and the throw will be repeated.</li><li>Two faults in a row will count as a record attempt and the Soldier will receive a “0” forthat record attempt.</li></ul></ul><iframe width="100%" height="315" src="https://www.youtube.com/embed/ihpqz2Wtooc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>').appendTo("#explItem");
             }
 
-            if(event == "pushup")
-            {
+            if (event == "pushup") {
                 $("#explImage").attr("src", "pushup.png");
                 $('<p><b>Hand-Release Push-up (HRP).</b>  During Phase I – IOC-Field Testing period the Army will field test two different Hand-Release Push-up protocols: (a) the Arm Extension protocol, and (b) the Hand Lift protocol. Regardless of protocol, the HRP is a two-minute timed event that measures upper body muscular endurance, and represents repetitive and sustained pushing used in combat tasks. The HRP tests a Soldier’s ability to push an opponent away during man-to-man contact, push a disabled vehicle, and push up from the ground during evasion andmaneuver. It also engages upper back muscles used when reaching out from the prone position when shooting, taking cover, or low crawling.</p><ul><li>The NCOIC will serve as the starter and common timer for the HRP. All lanes will start on thecommand “GO” and the NCOIC will keep the two-minute clock.</li><li>On the command of “GET SET,” one Soldier in each lane will assume the prone position facingthe start line with hands flat on the ground and index fingers inside the outer edges of theshoulders. The chest and front of the hips and thighs will be on the ground. Toes will touch theground with feet together or up to a boot’s width apart. The ankles will be flexed. The head doesnot have to be on the ground.</li><li>Hands will be placed flat on the ground with the index fingers inside the outer edges of theshoulders. Feet will remain generally together, no more than a boot’s width apart, throughout theHRP. Soldiers may adjust their feet during the test event as long as they do not lift a foot off the ground.</li><ul><li>Movement 1: on the command “GO,” a Soldier will push their whole body up from thegroundas a single unit to the up position by fully extending the elbows (front leaning rest).</li><ul><li>The Soldier will maintain a generally straight body alignment from the top of the head tothe ankles. This generally straight position will be maintained for the duration of the HRP.</li><li>Failing to maintain a generally straight alignment during a repetition will causethatrepetition to not count.</li><li>The front leaning rest is the only authorized rest position. Bending or flexing the knees,hips, trunk, or neck while in the rest position is not authorized.</li></ul><li>Movement 2: after the elbows are fully extended and the Soldier has reached the up position,the Soldier will bend their elbows to lower the body back to the ground. The chest, hips andthighs should touch down at the same time. The head or face do not have to contact theground.</li><li>Movement 3a: Arm Extension HRP – without moving the head, body, or legs, the Soldierwillextend both hands out from the body until the arms are fully extended forming a 90-degree angle between the arms and trunk at the shoulders. Hands may be on or off the ground. After reaching this position, the elbows bend to move the hands back under the shoulder.</li><li>Movement 3b: Hand Lift HRP – without moving the head, body, or legs, the Soldier will liftboth hands from the ground at the same time. A clear gap between the palms and the groundmust be visible to the grader to ensure Soldiers have released their hands from the ground. Thehands are then lowered until they are flat on the ground back under the shoulder.</li><li>Movement 4: Regardless of the HRP protocol, Soldiers must ensure their hands are flat on theground with the index fingers inside the outer edges of the shoulders (returning to the startingposition). This completes one repetition.</li></ul><li>The Soldier must make a continuous effort to push up and cannot rest on the ground. While theexercise cadence may vary during the two-minute test event, the grader will ensure the Soldier isnot resting on the ground. The grader will exercise their judgment, but a Soldier will generally beconsidered “at rest” if their efforts to perform a repetition stop for longer than 5 seconds. The HRPevent is terminated if the Soldier rests in any position other than the front leaning rest position,fails to exhibit continuous effort, lifts a foot off the ground, or places a knee on the ground. Thenumber of successfully completed repetitions in two minutes will be recorded as the raw score.</li><li>During the HRP event, graders should sit or kneel three feet to the side and above the Soldier’s head.</li><li>Graders Tips:</li><ul><li>A repetition will not count if the:</li><ul><li>Index finger is outside the outer edge of the shoulder.</li><li>Feet are more than a boot’s width apart.</li><li>Soldier fails to simultaneously raise the shoulders and hips (the whole body) off theground in a generally straight body alignment from the top of the head to the ankles.</li><li>Soldier bends or sags at the shoulders, hips, knees while in the front leaningrestposition</li></ul><li>After a warning, the test event will be terminated if the Soldier:</li><ul><li>Lifts a foot off the ground.</li><li>Lifts a hand off the ground while in the front leaning rest position.</li><li>Rests on the ground or in any position other than the front leaning rest position.</li></ul></ul></ul><iframe width="100%" height="315" src="https://www.youtube.com/embed/oX7339XfbSM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>').appendTo("#explItem");
             }
 
-            if(event == "sbc")
-            {
+            if (event == "sbc") {
                 $("#explImage").attr("src", "sbc.png");
                 $('<p><b>Sprint-Drag-Carry (SDC)</b> is a measure of muscular power, endurance, and strength, and anaerobic capacity, which are needed to accomplish high intensity combat tasks that last from a few seconds to several minutes. This capacity contributes to a Soldier’s ability to react quickly to direct and indirect fire, build a hasty fighting position, and extract a casualty from a vehicle and carry them to safety. The NCOIC will serve as the starter for the SDC. All lanes will start on the command “GO.” Individual graders will time their lane.</p><ul><li>When the NCOIC gives the command “GET SET,” one Soldier in each lane will assume the prone position with the top of the head behind the start line. The grader is positioned to see both the start line and the 25m line. The grader can position a Soldier/battle buddy on the 25m line to ensure compliance with test event standards. Sled weight is 90 lbs.</li><ul><li>Sprint: when the NCOIC gives the command “GO,” Soldiers stand and sprint 25m; touch the 25m line with foot and hand; turn and sprint back to the start line. If the Soldier fails to touch the 25m line with hand and foot, the grader watching the 25m turn line will call them back.</li><li>Drag: Soldiers will grasp each strap handle, which will be positioned and resting on the 90lb sled behind the start line; pull the sled backwards until the entire sled crosses the 25m line; turn the sled around and pull back until the entire sled crosses the start line. If the entire sled does not cross the 25m or start line, the grader watching the 25m turn line will call themback.</li><li>Lateral: after the entire sled crosses the start line, the Soldier will perform a lateral for 25m, touch the 25m turn line with foot and hand, and perform the lateral back to the start line. The Soldier will face the same direction moving back to the 25m start line and returning to the start line so they lead with each foot. Feet may shuffle and touch, but should not cross. If the Soldier fails to touch the 25m turn line with hand and foot, the grader watching the 25m turn line will call them back. Graders will correct Soldiers if they cross their feet.</li><li>Carry: Soldiers will grasp the handles of the two 40lb kettlebells and run to the 25m turn line; step on or over the 25m turn line with one foot; turn and run back to the start line. If the Soldier drops the kettlebells during movement, the carry will resume from the point the kettlebells were dropped. If the Soldier fails to touch the 25m turn line with their foot, the grader watching the 25m turn line will call them back.</li><li>Sprint: after stepping on/over the start line, Soldiers will place the kettlebells on the ground; turn and sprint 25m; touch the 25m turn line with foot and hand; turn and sprint back to thestart line. If the Soldier fails to touch the 25m turn line with hand and foot, the grader watching the 25m turn line will call them back.</li></ul><li>The time is stopped when the Soldier crosses the start line after the final sprint (250 meters).</li><li>The “penalty” for incorrect form or action is to return to the line and redo the actioncorrectly.</li><li>Record the time from start to finish of the 250m course on the scorecard.</li><li>Graders will correct Soldier performance that may result in injury to include:</li><ul><li>Jerking the straps or slinging the sled to turn the sled around.</li><li>Crossing the feet during the Lateral.</li><li>Failure to turn under control after picking up kettlebells.</li><li>Throwing the kettlebells.</li></ul><li>Graders will call Soldiers back to the start line or the 25m turn line to correct violations inperformance to include:</li><ul><li>Failure to touch the line with a hand and foot while sprinting or doing laterals.</li><li>Failure to pull the entire sled across the 25m or start line; Soldier’s body must cross the line pulling the sled backwards until the entire sled crosses the line; Soldier may then turn the sled.</li><li>Failure to pull the entire sled across the start line before beginning the laterals.</li><li>Failure to place the kettlebells on the ground under control; Soldier may not throw or toss the kettlebells.</li></ul></ul><iframe width="100%" height="315" src="https://www.youtube.com/embed/e74I7lgNu_8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>').appendTo("#explItem");
             }
 
-            if(event =="legtuck")
-            {
-                $("#explImage").attr("src","legtuck.png");
+            if (event == "legtuck") {
+                $("#explImage").attr("src", "legtuck.png");
                 $('<p><b>Leg Tuck (LTK)</b> has great occupational relevance and tests a Soldier’s muscular strength and endurance. LTKassesses grip strength, shoulder adduction and flexion, elbow flexion, and trunk and hip flexion. These movements assist Soldiers in all climbing tasks and in surmounting obstacles like a vertical wall, or climbing onto a shelf or up a rope. This test event will require well-conditioned abdominal, hip, and core flexor muscles, and anterior and posterior upper body muscles that will assist Soldiers in load carriage and in avoiding injuries to the upper and lower back. The objective in this exercise is to maintain a relative vertical posture while moving the hips and knees up and down without excessive swinging or kipping.</p><ul><li>The NCOIC will serve as the starter for the LTK. All lanes will start on the command “GO.”Thegrader will man the two-minute clock for each Soldier.</li><li>On the command “GET SET,” one Soldier from each lane will mount the bar and assume astraight-arm hang on the bar, with feet off the ground, knees bent if necessary. Graders may assistSoldiers up onto the bar. The grip is the alternating grip (recommend placing the dominant handclosest to the head). The body is perpendicular with the bar, however the alternating grip willcause the body to rotate outward slightly. The Soldier’s body must be fully extended in a straight-arm position (elbows, trunk, and hips are straight). Legs and feet may not be crossed; feet must beoff the ground with knees bent ifnecessary.</li><li>On the command “GO,” the Soldier will flex at the elbows, knees, hips, and waist to lift the knees.Flexing the elbows assists with this movement. The right and left knees or thighs must touch theright and left elbows, respectively. The grader must observe both knees (or thighs) in contact withboth elbows for the Soldier to receive credit for the repetition.</li><li>The Soldier will return under control to the straight-arm position, elbows straight, tocomplete each repetition. If the elbows remain bent, the next repetition will not count. TheSoldier does not have to be completely still. Small, inconsequential, or passive movementof the body and twisting of the trunk is permitted. Deliberately swinging the trunk and legsto assist with lifting the knees is not permitted and will cause the subsequent repetition tonot count.</li><li>The Soldier may rest in the straight-arm (down) position and may adjust grip positions bymoving the hands. The Soldiers feet cannot touch the ground during gripadjustments.</li><li>The Soldier cannot drop from the bar before assuming the straight-arm hang positionUNDERCONTROL in order for the last repetition to count.</li><li>The event will be terminated when the Soldier voluntarily stops (drops from the bar) orwhen two minutes has expired.</li><li>The grader will ensure the Soldier’s safety by spotting during the LTK and the grader may steady theSoldier to prevent or control excessiveswinging.</li><li>The grader will count off the number of correctly completed repetitions. The number ofsuccessfully completed repetitions will count as the raw score and will be recorded on thescorecard.</li><li>Graders and Soldiers will apply the following safetytips:</li><ul><li>Ensure the bar is free of moisture before mounting the bar.</li><li>Use a foot mount or grader-assist to mount the bar.</li><li>Ensure the Soldier’s hands are near the mid-point of the bar.</li><li>Prevent the head or back from striking the horizontal or vertical posts.</li></ul><li>A repetition will not count if a Soldier:</li><ul><li>Fails to touch both knees (or thighs) to both elbows.</li><li>Swings or twists to establish momentum to lift the knees.</li><li>Fails to return to a straight-arm position; arms fully extended in the down position.</li><li>Pushes off the post, ground or bar with back or foot to establish momentum to lift the knees.Incidental contact with the ground, post or bar is not penalized if the grader deems the Soldier hasgained no advantage.</li></ul><li>The LTK event will be terminated if the Soldiers drops from the bar or rests on the ground.</li></ul><iframe width="100%" height="315" src="https://www.youtube.com/embed/bXSHlJVjpIM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>').appendTo("#explItem");
             }
 
-            if(event =="twomile")
-            {
+            if (event == "twomile") {
                 $("#explImage").attr("src", "twomile.png");
                 $('<p><b>2 Mile Run (2MR)</b> is a test of aerobic endurance. It applies to common Soldier tasks such as dismounted movement, ruck marching, and infiltration. It can be completed on an indoor or outdoor track, or an improved surface such as a road or sidewalk. The 2MR cannot be tested on unimproved terrain. There is a programmed 5-minute rest between the LTK and the 2MR. The rest period begins when the last Soldier in the groupcompletes the LTK. The start and finish line will be near the same location as the test site for the other 5 testevents. Out-and-back or lap track courses are authorized. Separate 2MR graders are authorized. When usingseparate graders, the OIC or NCOIC is responsible for the orderly transfer of the scorecards from the lanegraders to the 2MR graders.</p><ul><li>Grader Tips.</li><ul><li>The OIC/NCOIC will ensure the 2MR course is measured to standard for distance and elevationand is clear from obstructions and debris.</li><li>An additional set of 2MR graders will increase throughput and reduce overall testing time. Whena group of Soldiers completes the Leg Tuck, the NCOIC will facilitate the transfer of Soldiersand scorecards to the 2MR NCOIC. The 2MR NCOIC will ensure Soldiers receive a minimumof 5 minutes between the end of the LTK and the beginning the 2MR.</li><li>An out and back 2MR course may reduce number of 2MR graders required to effectivelymonitor large groups of Soldiers.</li></ul></ul>').appendTo("#explItem");
             }
@@ -73,286 +67,271 @@
 
 
 
-       
-
-        function calcDeadLift(myVal)
-        {
-        	if(myVal <=80)
-        		return 0;
-        	if(myVal >=340)
-        		return 100;
 
 
-        	if(myVal <=140)
-        		return (myVal - 80);
-        	if(myVal <=160)
-        	{
-        		var multiplier = (myVal - 160)/10;
-        		return (multiplier*2)+65;
-        	}
-        	if(myVal < 180)
-        	{
-        		var multiplier = (myVal-161)/10;
-        		return Math.round((multiplier*2)+66);
-        	}
-        	
-        	
-        	if(myVal >= 180)
-        	{
-        		var multiplier = (myVal - 180)/10;
-        		return (multiplier*2)+70;
-        	}
-        	
+        function calcDeadLift(myVal) {
+            if (myVal <= 80)
+                return 0;
+            if (myVal >= 340)
+                return 100;
+
+
+            if (myVal <= 140)
+                return (myVal - 80);
+            if (myVal <= 160) {
+                var multiplier = (myVal - 160) / 10;
+                return (multiplier * 2) + 65;
+            }
+            if (myVal < 180) {
+                var multiplier = (myVal - 161) / 10;
+                return Math.round((multiplier * 2) + 66);
+            }
+
+
+            if (myVal >= 180) {
+                var multiplier = (myVal - 180) / 10;
+                return (multiplier * 2) + 70;
+            }
+
 
         }
 
-        function calcPowerThrow(myVal)
-        {
-        	if(myVal <= 3.1)
-        		return 0;
-        	if(myVal >= 13.5)
-        		return 100;
+        function calcPowerThrow(myVal) {
+            if (myVal <= 3.1)
+                return 0;
+            if (myVal >= 13.5)
+                return 100;
 
-        	if(myVal <= 4.6)
-        	{
-        		var multiplier = (4.6-myVal) * 40;
-        		return Math.round(60 - multiplier);
-        	}
+            if (myVal <= 4.6) {
+                var multiplier = (4.6 - myVal) * 40;
+                return Math.round(60 - multiplier);
+            }
 
-        	if(myVal <=6.5)
-        	{
-        		var multiplier = Math.round((65-(myVal*10))/3);
-        		return 65-multiplier;
-        	}
+            if (myVal <= 6.5) {
+                var multiplier = Math.round((65 - (myVal * 10)) / 3);
+                return 65 - multiplier;
+            }
 
-        	if(myVal < 8.5)
-        	{
-        		if(myVal == 8.4 || myVal == 8.3)
-        			return 69;
-        		var multiplier = (8.0-myVal)*2;
-        		return Math.round(68-multiplier);
-        	}
-        	
+            if (myVal < 8.5) {
+                if (myVal == 8.4 || myVal == 8.3)
+                    return 69;
+                var multiplier = (8.0 - myVal) * 2;
+                return Math.round(68 - multiplier);
+            }
 
 
-        	if(myVal >= 8.5)
-        	{
-        		var map = { '8.5':70,
-        					'8.6':71, 
-        					'8.8':72,
-        					'8.9':73,
-        					'9.1':74,
-        					'9.2':75,
-        					'9.4':76,
-        					'9.5':77,
-        					'9.7':78,
-        					'9.8':79,
-        					'10.0':80,
-        					'10.1':81,
-        					'10.3':82,
-        					'10.4':83,
-        					'10.6':84,
-        					'10.7':85,
-        					'10.9':86,
-        					'11.0':87,
-        					'11.2':88,
-        					'11.3':89,
-        					'11.5':90,
-        					'11.6':91,
-        					'11.8':92,
-        					'11.9':93,
-        					'12.1':94,
-        					'12.3':95,
-        					'12.5':96,
-        					'12.8':97,
-        					'13.0':98,
-        					'13.2':99,
-        					'13.5':100
-        				   }
 
-        		
-        		while(map[myVal.toString()]==undefined)
-        			myVal=myVal - 0.1;
-        		return map[myVal.toString()];
+            if (myVal >= 8.5) {
+                var map = {
+                    '8.5': 70,
+                    '8.6': 71,
+                    '8.8': 72,
+                    '8.9': 73,
+                    '9.1': 74,
+                    '9.2': 75,
+                    '9.4': 76,
+                    '9.5': 77,
+                    '9.7': 78,
+                    '9.8': 79,
+                    '10.0': 80,
+                    '10.1': 81,
+                    '10.3': 82,
+                    '10.4': 83,
+                    '10.6': 84,
+                    '10.7': 85,
+                    '10.9': 86,
+                    '11.0': 87,
+                    '11.2': 88,
+                    '11.3': 89,
+                    '11.5': 90,
+                    '11.6': 91,
+                    '11.8': 92,
+                    '11.9': 93,
+                    '12.1': 94,
+                    '12.3': 95,
+                    '12.5': 96,
+                    '12.8': 97,
+                    '13.0': 98,
+                    '13.2': 99,
+                    '13.5': 100
+                }
 
 
-        	}
+                while (map[myVal.toString()] == undefined)
+                    myVal = myVal - 0.1;
+                return map[myVal.toString()];
+
+
+            }
 
         }
 
-        function calcPushUps(myVal)
-        {
-        	if(myVal<1)
-        		return 0;
-        	if(myVal >= 70)
-        		return 100;
+        function calcPushUps(myVal) {
+            if (myVal < 1)
+                return 0;
+            if (myVal >= 70)
+                return 100;
 
-        	if(myVal <=10)
-        		return myVal*6;
+            if (myVal <= 10)
+                return myVal * 6;
 
-        	if(myVal <=30)
-        		return 70 - Math.round((30 - myVal)/2);
-        	
-        	if(myVal <=49)
-        		return 89 - (49-myVal);
+            if (myVal <= 30)
+                return 70 - Math.round((30 - myVal) / 2);
 
-        	if(myVal <=69)
-        	{
-        		if(myVal >= 68) return 99;
+            if (myVal <= 49)
+                return 89 - (49 - myVal);
 
-        		if(myVal % 2 != 0)
-        			myVal--;
+            if (myVal <= 69) {
+                if (myVal >= 68) return 99;
 
-        		return (98-(66-myVal)/2);
+                if (myVal % 2 != 0)
+                    myVal--;
 
-        	}
+                return (98 - (66 - myVal) / 2);
+
+            }
         }
 
-        function convertToSeconds(myVal)
-        {
-        	//split based on colon
-        	//convert to seconds for usage
-        	var splitVal = myVal.split(":");
-        	return (Number(splitVal[0])*60) + Number(splitVal[1]);
-        	
+        function convertToSeconds(myVal) {
+            //split based on colon
+            //convert to seconds for usage
+            var splitVal = myVal.split(":");
+            return (Number(splitVal[0]) * 60) + Number(splitVal[1]);
+
 
         }
 
-        function calcSDC(myVal)
-        {
+        function calcSDC(myVal) {
 
-        	var myConvertedVal = convertToSeconds(myVal);
-        	
-        	if(myConvertedVal >= convertToSeconds("4:35")) //hardcode these once ACFT is finalized
-	        	return 0;
+            var myConvertedVal = convertToSeconds(myVal);
 
-	        if(myConvertedVal <= convertToSeconds("1:40"))
-	        	return 100;
+            if (myConvertedVal >= convertToSeconds("4:35")) //hardcode these once ACFT is finalized
+                return 0;
 
-	        if(myConvertedVal >= convertToSeconds("3:35"))
-	        	return (myConvertedVal - convertToSeconds("3:35"));
+            if (myConvertedVal <= convertToSeconds("1:40"))
+                return 100;
 
-	        if(myConvertedVal >= convertToSeconds("2:45"))
-	        	return Math.floor((65 - ((myConvertedVal - convertToSeconds("2:45"))/10))); //round down.
+            if (myConvertedVal >= convertToSeconds("3:35"))
+                return (myConvertedVal - convertToSeconds("3:35"));
 
-	        if(myConvertedVal >= convertToSeconds("2:09"))
-	        	return Math.floor((70-(myConvertedVal - convertToSeconds("2:09"))/7));
+            if (myConvertedVal >= convertToSeconds("2:45"))
+                return Math.floor((65 - ((myConvertedVal - convertToSeconds("2:45")) / 10))); //round down.
 
-	        //currently no way to get 99 points
-	        if(myConvertedVal >= convertToSeconds("1:41"))
-	        	return 98 - (myConvertedVal - convertToSeconds("1:41"));
+            if (myConvertedVal >= convertToSeconds("2:09"))
+                return Math.floor((70 - (myConvertedVal - convertToSeconds("2:09")) / 7));
+
+            //currently no way to get 99 points
+            if (myConvertedVal >= convertToSeconds("1:41"))
+                return 98 - (myConvertedVal - convertToSeconds("1:41"));
 
         }
 
-        function calcLegTuck(myVal)
-        {
-        	if(myVal <= 0) return 0;
-        	if(myVal >= 20) return 100;
+        function calcLegTuck(myVal) {
+            if (myVal <= 0) return 0;
+            if (myVal >= 20) return 100;
 
-        	var map = { '1':60, '2': 63, '3':65, '4':67, '5':70, '6':72, '7':74, '8':76, '9':78, '10':80, '11':82, '12':84, '13':86, '14':88, '15':90, '16':92, '17':94, '18':96, '19':98, '20':100}
+            var map = { '1': 60, '2': 63, '3': 65, '4': 67, '5': 70, '6': 72, '7': 74, '8': 76, '9': 78, '10': 80, '11': 82, '12': 84, '13': 86, '14': 88, '15': 90, '16': 92, '17': 94, '18': 96, '19': 98, '20': 100 }
 
-        	return map[myVal.toString()];
+            return map[myVal.toString()];
         }
 
-        function calcTwoMile(myVal)
-        {
-        	var myConvertedVal = convertToSeconds(myVal);
-        	
-        	if(myConvertedVal <= convertToSeconds("12:45"))
-        		return 100;
-        	if(myConvertedVal >= convertToSeconds("23:07"))
-        		return 0;
+        function calcTwoMile(myVal) {
+            var myConvertedVal = convertToSeconds(myVal);
 
-        	if(myConvertedVal >= convertToSeconds("21:07"))
-        		return Math.floor(60-(myConvertedVal - convertToSeconds("21:07"))/2);
+            if (myConvertedVal <= convertToSeconds("12:45"))
+                return 100;
+            if (myConvertedVal >= convertToSeconds("23:07"))
+                return 0;
 
-
-        	if(myConvertedVal > convertToSeconds("20:45"))  //random arbitrary value in chart
-        		return 60;
-        	if(myConvertedVal == convertToSeconds("20:45"))
-        		return 61;
+            if (myConvertedVal >= convertToSeconds("21:07"))
+                return Math.floor(60 - (myConvertedVal - convertToSeconds("21:07")) / 2);
 
 
-        	if(myConvertedVal >= convertToSeconds("20:10"))
-        		return Math.floor(64 - (myConvertedVal - convertToSeconds("20:10")) / 10);
+            if (myConvertedVal > convertToSeconds("20:45"))  //random arbitrary value in chart
+                return 60;
+            if (myConvertedVal == convertToSeconds("20:45"))
+                return 61;
 
-        	if(myConvertedVal > convertToSeconds("19:00"))
-        		return 64;
-        	if(myConvertedVal == convertToSeconds("19:00"))
-        		return 65;
 
-        	if(myConvertedVal > convertToSeconds("18:50"))
-        		return 65;
-        	if(myConvertedVal == convertToSeconds("18:50"))
-        		return 66;
-        	if(myConvertedVal > convertToSeconds("18:35"))
-        		return 66;
-        	if(myConvertedVal == convertToSeconds("18:35"))
-        		return 67;
+            if (myConvertedVal >= convertToSeconds("20:10"))
+                return Math.floor(64 - (myConvertedVal - convertToSeconds("20:10")) / 10);
 
-        	if(myConvertedVal >= convertToSeconds("18:00"))
-        		return Math.floor(70 - (myConvertedVal - convertToSeconds("18:00"))/10);
+            if (myConvertedVal > convertToSeconds("19:00"))
+                return 64;
+            if (myConvertedVal == convertToSeconds("19:00"))
+                return 65;
 
-        	if(myConvertedVal >= convertToSeconds("13:30"))
-        		return Math.floor(97 - (myConvertedVal - convertToSeconds("13:30"))/10);
+            if (myConvertedVal > convertToSeconds("18:50"))
+                return 65;
+            if (myConvertedVal == convertToSeconds("18:50"))
+                return 66;
+            if (myConvertedVal > convertToSeconds("18:35"))
+                return 66;
+            if (myConvertedVal == convertToSeconds("18:35"))
+                return 67;
 
-        	if(myConvertedVal > convertToSeconds("13:15"))
-        		return 97;
-        	if(myConvertedVal == convertToSeconds("13:15"))
-        		return 98;
+            if (myConvertedVal >= convertToSeconds("18:00"))
+                return Math.floor(70 - (myConvertedVal - convertToSeconds("18:00")) / 10);
 
-        	if(myConvertedVal > convertToSeconds("13:00"))
-        		return 98;
-        	if(myConvertedVal == convertToSeconds("13:00"))
-        		return 99;
+            if (myConvertedVal >= convertToSeconds("13:30"))
+                return Math.floor(97 - (myConvertedVal - convertToSeconds("13:30")) / 10);
 
-        	if(myConvertedVal > convertToSeconds("12:45"))
-        		return 99;
+            if (myConvertedVal > convertToSeconds("13:15"))
+                return 97;
+            if (myConvertedVal == convertToSeconds("13:15"))
+                return 98;
+
+            if (myConvertedVal > convertToSeconds("13:00"))
+                return 98;
+            if (myConvertedVal == convertToSeconds("13:00"))
+                return 99;
+
+            if (myConvertedVal > convertToSeconds("12:45"))
+                return 99;
 
         }
 
 
 
-        function writeScore(score, pos, pass){
-        
+        function writeScore(score, pos, pass) {
 
-        		if(!pass){
-        			$("#finalResult").html("Fail");
-        			$("#finalResult").addClass("failColor");
-        		}
 
-        		if(pos == 0){
-        			$("#deadLiftCalced").html(score[0] + "/100");
-        			addFailFont("deadLiftCalced", pass);
-        		}
-        		if(pos == 1){
-    				$("#powerThrowCalced").html(score[1] + "/100");
-    				addFailFont("powerThrowCalced", pass);
-        		}
-    			if(pos == 2){
-    				$("#pushUpsCalced").html(score[2]+ "/100");
-    				addFailFont("pushUpsCalced", pass);
-    			}
-    			if(pos == 3){
-    				$("#sprintDragCarryCalced").html(score[3]+ "/100");
-    				addFailFont("sprintDragCarryCalced", pass);
-    			}
-    			if(pos == 4){
-    				$("#legTuckCalced").html(score[4]+"/100");
-    				addFailFont("legTuckCalced", pass);
-    			}
-    			
-    			if(pos == 5){
-    				$("#twoMileRunCalced").html(score[5]+ "/100");
-    				addFailFont("twoMileRunCalced", pass);
-    			}
-    			
+            if (!pass) {
+                $("#finalResult").html("Fail");
+                $("#finalResult").addClass("failColor");
+            }
+
+            if (pos == 0) {
+                $("#deadLiftCalced").html(score[0] + "/100");
+                addFailFont("deadLiftCalced", pass);
+            }
+            if (pos == 1) {
+                $("#powerThrowCalced").html(score[1] + "/100");
+                addFailFont("powerThrowCalced", pass);
+            }
+            if (pos == 2) {
+                $("#pushUpsCalced").html(score[2] + "/100");
+                addFailFont("pushUpsCalced", pass);
+            }
+            if (pos == 3) {
+                $("#sprintDragCarryCalced").html(score[3] + "/100");
+                addFailFont("sprintDragCarryCalced", pass);
+            }
+            if (pos == 4) {
+                $("#legTuckCalced").html(score[4] + "/100");
+                addFailFont("legTuckCalced", pass);
+            }
+
+            if (pos == 5) {
+                $("#twoMileRunCalced").html(score[5] + "/100");
+                addFailFont("twoMileRunCalced", pass);
+            }
+
         }
 
-        function addFailFont(myId, pass)
-        {
-        	if(!pass)
-        		$("#"+myId).addClass("failColor");
+        function addFailFont(myId, pass) {
+            if (!pass)
+                $("#" + myId).addClass("failColor");
 
         }
 
@@ -361,14 +340,14 @@
         $(document).ready(function () {
 
             //does not work in firefox or edge
-    		/*$("#soldierCat").change(function(e){
+            /*$("#soldierCat").change(function(e){
 
-    			var backgroundColor = $("option:selected", this).css("background-color");
-    			var color = $("option:selected", this).css("color");
-    			$(this).css("background-color",backgroundColor);
-    			$(this).css("color",color)
+                var backgroundColor = $("option:selected", this).css("background-color");
+                var color = $("option:selected", this).css("color");
+                $(this).css("background-color",backgroundColor);
+                $(this).css("color",color)
 
-    		}).change();*/
+            }).change();*/
 
 
             $('#soldierCat').change(function () {
@@ -409,15 +388,15 @@
                 $(this).removeAttr('placeholder');
             });
 
-            $('#searchBtn').click(function (e){
+            $('#searchBtn').click(function (e) {
                 var myVal = $('#catSearch').val().toUpperCase();
-                
+
                 if (myVal == "") {
                     alert("No MOS entered.");
                     return;
                 }
 
-                
+
                 var found = false;
                 for (var i = 0; i < mosi.length; i++) {
                     if (mosi[i].mos == myVal) {
@@ -430,135 +409,129 @@
                 if (found == false)
                     alert("MOS " + myVal + " not found.");
             });
-           
 
 
-    		$("#clear").click(function(e){
 
-    			$("input").map(function(){
-    				$(this).val("");
+            $("#clear").click(function (e) {
 
-    			});
-    		});
+                $("input").map(function () {
+                    $(this).val("");
 
-
-    		//on submit
-    		$("#submit").click(function(e){
-    			var invalidError = 0;
-    			var emptyError = 0;
-    			
-    			$('#errorBlock').find('p').remove();
-    			$('#errorBlock').hide();
-
-    			$("input").map(function(){
-    				$(this).removeClass('errorBorder');
-    				
-    				if(!$(this).val()){
-    					$(this).addClass('errorBorder');
-    					emptyError++;
-    				}
-
-    				if($(this).attr('id') =="sprintDragCarry" || $(this).attr('id')=="twoMileRun" )
-    				{
-    					var text = $(this).val();
-    					if(text.indexOf(':') == -1)
-    					{
-    						$('#errorBlock').show();
-    						$(this).addClass('errorBorder');
-    						invalidError++;
-    					}
-
-    				}
-    				else if (!$.isNumeric($(this).val())) {
-    					$(this).addClass('errorBorder');
-    					invalidError++;
-    				}
-    					
-    				
-    			});
-
-    			if(emptyError > 0){
-    				$('#errorBlock').show();
-    				$('<p>All fields must contain a valid value.</p>').appendTo("#errorBlock");
-
-    			};
-
-    			if(invalidError > 0){
-    				$('#errorBlock').show();
-    				$('<p>Incorrect value entered or time not formatted correctly.</p>').appendTo("#errorBlock");
-    			}
-
-    			if(invalidError + emptyError != 0)
-    				return;
-
-    			var pass = true;
-    			$("#finalResult").html("Pass");
-    			
-    			var soldierCat = $("#soldierCat").val();
-    			if(soldierCat == 1)
-    				$("#finalSoldierCat").html("Category: Moderate Physical Demand (60%)");
-    			if(soldierCat == 2)
-    				$("#finalSoldierCat").html("Category: Significant Physical Demand (65%)");
-    			if(soldierCat == 3)
-    				$("#finalSoldierCat").html("Category: Heavy Physical Demand (70%)");
-    			
-    			var score = [];
-
-    			score[0]=calcDeadLift($("#deadliftWgt").val());
-    			score[1]=calcPowerThrow($("#powerThrowDis").val())
-    			score[2]=calcPushUps($("#releasePushup").val());
-    			score[3]=calcSDC($("#sprintDragCarry").val());
-    			score[4]=calcLegTuck($("#legTuck").val());
-    			score[5]=calcTwoMile($("#twoMileRun").val());
+                });
+            });
 
 
-    			var total = 0;
+            //on submit
+            $("#submit").click(function (e) {
+                var invalidError = 0;
+                var emptyError = 0;
 
-    			for(var i = 0; i < score.length; i++)
-    			{
+                $('#errorBlock').find('p').remove();
+                $('#errorBlock').hide();
 
-    				total = total + score[i];
-    				if(soldierCat == 1 )
-    				{
-    					if(score[i]< 60)
-    						writeScore(score, i, false);
-    					else
-    						writeScore(score,i,true);
-    					
-    				}
+                $("input").map(function () {
+                    $(this).removeClass('errorBorder');
 
-    				if(soldierCat == 2)
-    				{
-    					if(score[i] < 65)
-    						writeScore(score, i, false);
-    					else
-    						writeScore(score,i,true);
-    				}
-    				
+                    if (!$(this).val()) {
+                        $(this).addClass('errorBorder');
+                        emptyError++;
+                    }
 
-    				if(soldierCat == 3)
-    				{
-    					if(score[i] < 70)
-    						writeScore(score, i, false);
-    					else
-    						writeScore(score,i,true);
-    				}
-    				
+                    if ($(this).attr('id') == "sprintDragCarry" || $(this).attr('id') == "twoMileRun") {
+                        var text = $(this).val();
+                        if (text.indexOf(':') == -1) {
+                            $('#errorBlock').show();
+                            $(this).addClass('errorBorder');
+                            invalidError++;
+                        }
 
-    			}
+                    }
+                    else if (!$.isNumeric($(this).val())) {
+                        $(this).addClass('errorBorder');
+                        invalidError++;
+                    }
 
-    			$("#totalScore").html(total + "/600");
-    		
 
-    			
+                });
 
-    			$('#myModal').modal('show'); 
-    			//alert(soldierCat);
+                if (emptyError > 0) {
+                    $('#errorBlock').show();
+                    $('<p>All fields must contain a valid value.</p>').appendTo("#errorBlock");
 
-                
+                };
 
-    		}); //end onclick
-    		
+                if (invalidError > 0) {
+                    $('#errorBlock').show();
+                    $('<p>Incorrect value entered or time not formatted correctly.</p>').appendTo("#errorBlock");
+                }
+
+                if (invalidError + emptyError != 0)
+                    return;
+
+                var pass = true;
+                $("#finalResult").html("Pass");
+
+                var soldierCat = $("#soldierCat").val();
+                if (soldierCat == 1)
+                    $("#finalSoldierCat").html("Category: Moderate Physical Demand (60%)");
+                if (soldierCat == 2)
+                    $("#finalSoldierCat").html("Category: Significant Physical Demand (65%)");
+                if (soldierCat == 3)
+                    $("#finalSoldierCat").html("Category: Heavy Physical Demand (70%)");
+
+                var score = [];
+
+                score[0] = calcDeadLift($("#deadliftWgt").val());
+                score[1] = calcPowerThrow($("#powerThrowDis").val())
+                score[2] = calcPushUps($("#releasePushup").val());
+                score[3] = calcSDC($("#sprintDragCarry").val());
+                score[4] = calcLegTuck($("#legTuck").val());
+                score[5] = calcTwoMile($("#twoMileRun").val());
+
+
+                var total = 0;
+
+                for (var i = 0; i < score.length; i++) {
+
+                    total = total + score[i];
+                    if (soldierCat == 1) {
+                        if (score[i] < 60)
+                            writeScore(score, i, false);
+                        else
+                            writeScore(score, i, true);
+
+                    }
+
+                    if (soldierCat == 2) {
+                        if (score[i] < 65)
+                            writeScore(score, i, false);
+                        else
+                            writeScore(score, i, true);
+                    }
+
+
+                    if (soldierCat == 3) {
+                        if (score[i] < 70)
+                            writeScore(score, i, false);
+                        else
+                            writeScore(score, i, true);
+                    }
+
+
+                }
+
+                $("#totalScore").html(total + "/600");
+
+
+
+
+                $('#myModal').modal('show');
+                //alert(soldierCat);
+
+
+
+            }); //end onclick
+
 
             mosi =
                 [
@@ -693,8 +666,8 @@
                     { "mos": "150A", "description": "Air Traffic & Air Space Management Technician", "category": "MODERATE" },
                     { "mos": "150U", "description": "Unmanned Aircraft Systems Operations Technician", "category": "MODERATE" },
                     { "mos": "151A", "description": "Aviation Maintenance Technician (Nonrated)", "category": "MODERATE" },
-                    { "mos": "152B", "description": "OH-58A/C Scout Pilot (RC)", "category" : "HEAVY" },
-	                { "mos": "152C", "description": "OH-6 Pilot", "category": "HEAVY" },
+                    { "mos": "152B", "description": "OH-58A/C Scout Pilot (RC)", "category": "HEAVY" },
+                    { "mos": "152C", "description": "OH-6 Pilot", "category": "HEAVY" },
                     { "mos": "152D", "description": "OH-58D", "description": "Pilot", "category": "HEAVY" },
                     { "mos": "152E", "description": "AH-64E", "description": "Pilot", "category": "HEAVY" },
                     { "mos": "152F", "description": "AH-64A", "description": "Attack Pilot", "category": "HEAVY" },
@@ -710,9 +683,9 @@
                     { "mos": "154F", "description": "CH-47F", "description": "Pilot", "category": "HEAVY" },
                     { "mos": "155A", "description": "Fixed Wing Aviator (Aircraft Nonspecific)", "category": "MODERATE" },
                     { "mos": "155E", "description": "C-12", "description": "Pilot", "category": "MODERATE" },
-                    { "mos": "155F", "description": "Jet Aircraft Pilot", "category" : "MODERATE" },
-                    { "mos": "155G", "description": "0-5A/EO-5B/RC-7 Pilot", "category" : "MODERATE" },
-	                { "mos": "170A", "description": "Cyber Operations Technician", "category": "MODERATE" },
+                    { "mos": "155F", "description": "Jet Aircraft Pilot", "category": "MODERATE" },
+                    { "mos": "155G", "description": "0-5A/EO-5B/RC-7 Pilot", "category": "MODERATE" },
+                    { "mos": "170A", "description": "Cyber Operations Technician", "category": "MODERATE" },
                     { "mos": "180A", "description": "Special Forces Warrant Officer", "category": "MODERATE" },
                     { "mos": "255A", "description": "Information Services Technician", "category": "MODERATE" },
                     { "mos": "255N", "description": "Network Management Technician", "category": "MODERATE" },
@@ -964,300 +937,308 @@
                     { "mos": "94Z", "description": "Senior Electronic Maintenance Supervisor", "category": "MODERATE" }
                 ]
 
-            
 
-    	});  //end ready
+
+        });  //end ready
     </script>
     <style>
-     h1 {
-     	font-weight: bold;
-     }
+        h1 {
+            font-weight: bold;
+        }
+
         .jumbotron {
             width: 100%;
-            border: lightgrey  solid 1px !important;
+            border: lightgrey solid 1px !important;
             max-height: 300px;
         }
-        .top-buffer { margin-top:20px; }
-  	 	.errorText { color: red; }
-  	 	.errorBorder {border-color: red;}
-  	 	.failColor {color: #FF0000;}
 
-  	 	/*select option.option1
-  	 	{
-  	 		background-color: gold !important;
-  	 	}
-
-  	 	select option.option2
-  	 	{
-  	 		background-color: #D0D0D0 !important;
-  	 	}
-
-  	 	select option.option3
-  	 	{
-  	 		background-color: black !important;
-  	 		color: white !important;
-  	 	}*/
-
-         select option,
-        select {
-            background-color:white;
+        .top-buffer {
+            margin-top: 20px;
         }
 
-         select option[value="1"],
-            select.option1
-            {
-                background-color:gold;
+        .errorText {
+            color: red;
+        }
+
+        .errorBorder {
+            border-color: red;
+        }
+
+        .failColor {
+            color: #FF0000;
+        }
+
+        /*select option.option1
+        {
+            background-color: gold !important;
+        }
+
+        select option.option2
+        {
+            background-color: #D0D0D0 !important;
+        }
+
+        select option.option3
+        {
+            background-color: black !important;
+            color: white !important;
+        }*/
+
+        select option,
+        select {
+            background-color: white;
+        }
+
+            select option[value="1"],
+            select.option1 {
+                background-color: gold;
             }
 
-        select option[value="2"],
-            select.option2
-            {
-                background-color:#D0D0D0;
+            select option[value="2"],
+            select.option2 {
+                background-color: #D0D0D0;
             }
 
-        select option[value="3"],
-            select.option3
-            {
-                background-color:black;
+            select option[value="3"],
+            select.option3 {
+                background-color: black;
                 color: white;
             }
-
     </style>
 </head>
 <body>
-	<div >
-	<div class="row">
-		<div class="col-md-12">
-			<!--<div class="col-md-4">
-				<img  alt="SC National Guard" src="https://www.scguard.com/wp-content/themes/scng-new/assets/media/logo.png" />
-			</div>
-			<div class="col-md-4">
-				<h1>
-					ACFT Calculator
-				</h1>
-			</div>-->
-            
+    <div>
+        <div class="row">
+            <div class="col-md-12">
+                <!--<div class="col-md-4">
+                    <img  alt="SC National Guard" src="https://www.scguard.com/wp-content/themes/scng-new/assets/media/logo.png" />
+                </div>
+                <div class="col-md-4">
+                    <h1>
+                        ACFT Calculator
+                    </h1>
+                </div>-->
                 <!--<img class="img-responsive w-75 h-50" alt="acft" src="acft.PNG"/>-->
 
-            
-                <img class="w-100 h-50" alt="acft" src="acft.PNG"/>
+
+                <img class="w-100 h-50" alt="acft" src="acft.PNG" />
                 <hr>
-	</div>
-	</div>
-	</div>
-	<div class="row">
-		<div class="col-md-4">
-				<h1>Soldier Data</h1>
-				<div class="row">
-					<div class="col-sm-6">
-					<!--<div class="form-group">-->
-						 <label left id="deadliftWgtLbl" for="deadliftWgt">Deadlift Weight</label>
-						 <input  placeholder="0" class="form-control " id="deadliftWgt" name="deadliftWgt"/>
-						  <label left id="powerThrowDisLbl" for="powerThrowDis">Power Throw Distance (m)</label>
-						 <input  placeholder="0.0"class="form-control " id="powerThrowDis" name="powerThrowDis"/>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <h1>Soldier Data</h1>
+            <div class="row">
+                <div class="col-sm-6">
+                    <!--<div class="form-group">-->
+                    <label left id="deadliftWgtLbl" for="deadliftWgt">Deadlift Weight</label>
+                    <input placeholder="0" class="form-control " id="deadliftWgt" name="deadliftWgt" />
+                    <label left id="powerThrowDisLbl" for="powerThrowDis">Power Throw Distance (m)</label>
+                    <input placeholder="0.0" class="form-control " id="powerThrowDis" name="powerThrowDis" />
 
-						 <label left id="releasePushupLbl" for="releasePushup">Release Pushups</label>
-						 <input placeholder="0" class="form-control" id="releasePushup" name="releasePushup"/>
-						 
-				
-					</div>
+                    <label left id="releasePushupLbl" for="releasePushup">Release Pushups</label>
+                    <input placeholder="0" class="form-control" id="releasePushup" name="releasePushup" />
 
 
+                </div>
 
-					<div class="col-sm-6">
-						 <label left id="sprintDragCarryLbl" for="sprintDragCarry">Sprint Drag Carry (m:ss)</label>
-						 <input  placeholder="0:00" class="form-control " id="sprintDragCarry" name="sprintDragCarry"/>
-						 
-						 <label left id="legTuckLbl" for="legTuck">Leg Tuck</label>
-						 <input placeholder="0" class="form-control " id="legTuck" name="legTuck"/>
-						 <label left id="twoMileRunLbl" for="twoMileRun">Two Mile Run (m:ss)</label>
-						 <input  placeholder="0:00" class="form-control " id="twoMileRun" name="twoMileRun"/>
-					</div>
-				</div>
 
-				<div class="row">
-					<div class="col-sm-12">
-						<label id="soldierCatLbl" for="soldierCat">Soldier Category</label> 
-						<select id="soldierCat" name="soldierCat" class="form-control option1">
-							<option class="option1" value="1">Moderate Physical Demand (60%)</option>
-							<option class="option2" value="2">Significant Physical Demand (65%)</option>
-							<option class="option3" value="3">Heavy Physical Demand (70%)</option>
-						</select>
 
-					</div> 
-				</div>
-				<div class="row top-buffer">
-					<div class="col-sm-4">
-						
-						<button id="submit" type="submit" class="btn btn-primary">Calculate</button>
-						<button id="clear" class="float-right btn btn-warning">Clear</button>
-					</div>
-				</div>
-				<div class="row" >
-					<div  id="errorBlock" class="col-sm-4 errorText">
-						
-					</div>
-				</div>
-		</div>
+                <div class="col-sm-6">
+                    <label left id="sprintDragCarryLbl" for="sprintDragCarry">Sprint Drag Carry (m:ss)</label>
+                    <input placeholder="0:00" class="form-control " id="sprintDragCarry" name="sprintDragCarry" />
+
+                    <label left id="legTuckLbl" for="legTuck">Leg Tuck</label>
+                    <input placeholder="0" class="form-control " id="legTuck" name="legTuck" />
+                    <label left id="twoMileRunLbl" for="twoMileRun">Two Mile Run (m:ss)</label>
+                    <input placeholder="0:00" class="form-control " id="twoMileRun" name="twoMileRun" />
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <label id="soldierCatLbl" for="soldierCat">Soldier Category</label>
+                    <select id="soldierCat" name="soldierCat" class="form-control option1">
+                        <option class="option1" value="1">Moderate Physical Demand (60%)</option>
+                        <option class="option2" value="2">Significant Physical Demand (65%)</option>
+                        <option class="option3" value="3">Heavy Physical Demand (70%)</option>
+                    </select>
+
+                </div>
+            </div>
+            <div class="row top-buffer">
+                <div class="col-sm-4">
+
+                    <button id="submit" type="submit" class="btn btn-primary">Calculate</button>
+                    <button id="clear" class="float-right btn btn-warning">Clear</button>
+                </div>
+            </div>
+            <div class="row">
+                <div id="errorBlock" class="col-sm-4 errorText">
+
+                </div>
+            </div>
+        </div>
         <div class="col-md-4 text-left ">
             <h1>Instructions</h1>
 
             <ul class="list-group">
 
-                    <a href="#" id="deadLiftMod" class="list-group-item list-group-item-action">Deadlift</a>
-                    <a href="#" id="powerThrowMod" class="list-group-item list-group-item-action">Power Throw</a>
-                    <a href="#" id="pushUpMod" class="list-group-item list-group-item-action">Release Push-Ups</a>
-                    <a href="#" id="sbcMod" class="list-group-item list-group-item-action">Sprint Drag Carry</a>
-                    <a href="#" id="legTuckMod" class="list-group-item list-group-item-action">Leg Tuck</a>
-                    <a href="#" id="twoMileMod" class="list-group-item list-group-item-action">Two Mile Run</a>
-                  
-                    <li class="list-group-item">
-                        <div class="input-group">
-                            <span class="input-group-btn">
-                                <button id="searchBtn" class="btn btn-default pull-left" type="button">Search</button>
-                            </span>
-                            <input type="text"  id="catSearch" class="list-group-item list-group-item-action" placeholder="MOS Category Search (11A, 12B, etc)">
-                        </div>
-                        </li>
+                <a href="#" id="deadLiftMod" class="list-group-item list-group-item-action">Deadlift</a>
+                <a href="#" id="powerThrowMod" class="list-group-item list-group-item-action">Power Throw</a>
+                <a href="#" id="pushUpMod" class="list-group-item list-group-item-action">Release Push-Ups</a>
+                <a href="#" id="sbcMod" class="list-group-item list-group-item-action">Sprint Drag Carry</a>
+                <a href="#" id="legTuckMod" class="list-group-item list-group-item-action">Leg Tuck</a>
+                <a href="#" id="twoMileMod" class="list-group-item list-group-item-action">Two Mile Run</a>
+
+                <li class="list-group-item">
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                            <button id="searchBtn" class="btn btn-default pull-left" type="button">MOS Search</button>
+                        </span>
+                        <input type="text" id="catSearch" class="list-group-item list-group-item-action" placeholder="MOS Category Search (11A, 12B, etc)">
+                    </div>
+                </li>
 
             </ul>
         </div>
-		
-		
+
+
         <div class="modal" id="explModal">
             <div class="modal-dialog modal-dialog-centered modal-lg">
-                      <div class="modal-content">
-                      
-                        <!-- Modal Header -->
-                        <div class="modal-header">
-                            <div class="col-md-12">
-                                 <img  style="width: 100%;" class="img-responsive" id="explImage" src="" />
-                            </div>
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <div class="col-md-12">
+                            <img style="width: 100%;" class="img-responsive" id="explImage" src="" />
                         </div>
-			             <div class="modal-body">
-                            <div class="container col-md-12">
-                                <div class="row">
-                                    <div id= "explItem" class="col-md-122">
-                                        
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                         <div class="modal-footer">
-                            <div class="container col-md-12 ">
-                                <div class="row">
-                                    <div class="col-md-12 text-center">
-                                         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                     </div>
-                                    </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container col-md-12">
+                            <div class="row">
+                                <div id="explItem" class="col-md-122">
 
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="modal-footer">
+                        <div class="container col-md-12 ">
+                            <div class="row">
+                                <div class="col-md-12 text-center">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
+    </div>
 
 
-				<!-- The Modal -->
-				  <div class="modal" id="myModal">
-				    <div class="modal-dialog modal-dialog-centered modal-lg">
-				      <div class="modal-content">
-				      
-				        <!-- Modal Header -->
-				        <div class="modal-header">
-				          <h4 id="finalSoldierCat" class="modal-title"></h4>
-				          <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
-				        </div>
-				        
-				        <!-- Modal body -->
-				        <div class="modal-body">
-				       		<div class="container col-md-12">
-				       			<div class="row">
-					          		<div class="col-md-6">
-					          			<h2 >Deadlift: </h2> 
-					          		</div>
-					          		<div class="col-md-4">
-					          			<h3 id="deadLiftCalced"></h3>
-					          		</div>
-				          		</div>
-				          		<div class="row">
-				          			<div class="col-md-6">
-				          				<h2>Power Throw: </h2>
-				          			</div>
-				          			<div class="col-md-4">
-				          				<h3 id="powerThrowCalced"></h3>
-				          			</div>
-				          		</div>
-				          		<div class="row">
-				          			<div class="col-md-6">
-				          				<h2>Release Pushups: </h2>
-				          			</div>
-				          			<div class="col-md-4">
-				          				<h3 id="pushUpsCalced"></h3>
-				          			</div>
-				          		</div>
-				          		<div class="row">
-				          			<div class="col-md-6">
-				          				<h2>Sprint Drag Carry: </h2>
-				          			</div>
-				          			<div class="col-md-4">
-				          				<h3 id="sprintDragCarryCalced"></h3>
-				          			</div>
-				          		</div>
-				          		<div class="row">
-				          			<div class="col-md-6">
-				          				<h2>Leg Tuck: </h2>
-				          			</div>
-				          			<div class="col-md-4">
-				          				<h3 id="legTuckCalced"></h3>
-				          			</div>
-				          		</div>
-				          		<div class="row">
-				          			<div class="col-md-6">
-				          				<h2>Two Mile Run: </h2>
-				          			</div>
-				          			<div class="col-md-4">
-				          				<h3 id="twoMileRunCalced"></h3>
-				          			</div>
-				          		</div>
-				          		<div class="row">
-				          			<div class="col-md-6">
-				          				<h2>Total: </h2>
-				          			</div>
-				          			<div class="col-md-4">
-				          				<h3 id="totalScore"></h3>
-				          			</div>
-				          		</div>
-				     		  </div>
-				     	</div>
-				        
-				        <!-- Modal footer -->
-				        <div class="modal-footer">
-				        	<div class="container col-md-12">
-				        		<div class="row">
-				        			<div class="col-md-4">
-				         				 <h4>ACFT Result:  </h4>
-				         			</div>
-				         			<div class="col-md-4">
-				         				<h4 id="finalResult">Pass</h4>
-				         			</div>
-				         			<div class="col-md-4">
-				         				 <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-				         			</div>
-				         		</div>
-				         	</div>
-				        </div>
-				        
-				      </div>
-				    </div>
-				  </div>
-					
-					
+    <!-- The Modal -->
+    <div class="modal" id="myModal">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
 
-		
-						
-			</div> <!--row-->
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 id="finalSoldierCat" class="modal-title"></h4>
+                    <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="container col-md-12">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h2>Deadlift: </h2>
+                            </div>
+                            <div class="col-md-4">
+                                <h3 id="deadLiftCalced"></h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h2>Power Throw: </h2>
+                            </div>
+                            <div class="col-md-4">
+                                <h3 id="powerThrowCalced"></h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h2>Release Pushups: </h2>
+                            </div>
+                            <div class="col-md-4">
+                                <h3 id="pushUpsCalced"></h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h2>Sprint Drag Carry: </h2>
+                            </div>
+                            <div class="col-md-4">
+                                <h3 id="sprintDragCarryCalced"></h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h2>Leg Tuck: </h2>
+                            </div>
+                            <div class="col-md-4">
+                                <h3 id="legTuckCalced"></h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h2>Two Mile Run: </h2>
+                            </div>
+                            <div class="col-md-4">
+                                <h3 id="twoMileRunCalced"></h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h2>Total: </h2>
+                            </div>
+                            <div class="col-md-4">
+                                <h3 id="totalScore"></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <div class="container col-md-12">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <h4>ACFT Result:  </h4>
+                            </div>
+                            <div class="col-md-4">
+                                <h4 id="finalResult">Pass</h4>
+                            </div>
+                            <div class="col-md-4">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    </div> <!--row-->
 
 </body>
 </html>
