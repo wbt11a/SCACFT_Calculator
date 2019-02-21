@@ -349,6 +349,7 @@
 
             }).change();*/
 
+            $('#mosText').hide();
 
             $('#soldierCat').change(function () {
                 var color = $(this).find('option:selected').val();
@@ -400,7 +401,10 @@
                 var found = false;
                 for (var i = 0; i < mosi.length; i++) {
                     if (mosi[i].mos == myVal) {
-                        alert("MOS: " + mosi[i].description + ".  ACFT Category: " + mosi[i].category);
+                       // alert("MOS: " + mosi[i].description + ".  ACFT Category: " + mosi[i].category);
+                        $('#mosText').empty();
+                        $('#mosText').show();
+                        $('#mosText').html("<h3>MOS:  " + mosi[i].description + ".  ACFT Category: " + mosi[i].category);
                         found = true;
                         break;
                     }
@@ -1099,6 +1103,9 @@
                         </span>
                         <input type="text" id="catSearch" class="list-group-item list-group-item-action" placeholder="MOS Category Search (11A, 12B, etc)">
                     </div>
+                </li>
+                <li id="mosText" class="list-group-item">
+
                 </li>
 
             </ul>
