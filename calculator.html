@@ -404,14 +404,19 @@
                        // alert("MOS: " + mosi[i].description + ".  ACFT Category: " + mosi[i].category);
                         $('#mosText').empty();
                         $('#mosText').show();
-                        $('#mosText').html("<h3>MOS:  " + mosi[i].description + ".  ACFT Category: " + mosi[i].category);
+                        $('#mosText').html("<h3>MOS:  " + mosi[i].description + ".  ACFT Category: " + mosi[i].category + "</h3>");
                         found = true;
                         break;
                     }
                 }
 
-                if (found == false)
-                    alert("MOS " + myVal + " not found.");
+                if (found == false) {
+                    //alert("MOS " + myVal + " not found.");
+                    $('#mosText').empty();
+                    $('#mosText').show();
+                    $('#mosText').html("<h3 style='color: red'>MOS " + myVal + " not found.</h3>");
+                }
+                    
             });
 
 
