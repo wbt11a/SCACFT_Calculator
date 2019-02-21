@@ -397,25 +397,21 @@
                     return;
                 }
 
-
-                var found = false;
                 for (var i = 0; i < mosi.length; i++) {
                     if (mosi[i].mos == myVal) {
                        // alert("MOS: " + mosi[i].description + ".  ACFT Category: " + mosi[i].category);
                         $('#mosText').empty();
                         $('#mosText').show();
                         $('#mosText').html("<h3>MOS:  " + mosi[i].description + ".  ACFT Category: " + mosi[i].category + "</h3>");
-                        found = true;
                         break;
                     }
                 }
 
-                if (found == false) {
                     //alert("MOS " + myVal + " not found.");
-                    $('#mosText').empty();
-                    $('#mosText').show();
-                    $('#mosText').html("<h3 style='color: red'>MOS " + myVal + " not found.</h3>");
-                }
+                $('#mosText').empty();
+                $('#mosText').show();
+                $('#mosText').html("<h3 style='color: red'>MOS " + myVal + " not found.</h3>");
+                
                     
             });
 
