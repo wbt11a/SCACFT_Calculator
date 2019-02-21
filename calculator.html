@@ -403,6 +403,7 @@
                         $('#mosText').empty();
                         $('#mosText').show();
                         $('#mosText').html("<h3>MOS:  " + mosi[i].description + ".  ACFT Category: " + mosi[i].category + "</h3>");
+                        window.scrollTo(0, document.body.scrollHeight);
                         break;
                     }
                 }
@@ -412,7 +413,8 @@
                 $('#mosText').show();
                 $('#mosText').html("<h3 style='color: red'>MOS " + myVal + " not found.</h3>");
                 
-                    
+                window.scrollTo(0, document.body.scrollHeight);
+
             });
 
 
